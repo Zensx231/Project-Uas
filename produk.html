@@ -1,0 +1,313 @@
+
+<!DOCTYPE html>
+<!-- Menentukan bahwa dokumen menggunakan HTML5 -->
+<html lang="id">
+
+<head>
+  <!-- Mengatur karakter agar mendukung berbagai huruf dan simbol -->
+  <meta charset="UTF-8">
+
+  <!-- Membuat tampilan website menyesuaikan ukuran layar perangkat -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Menentukan judul halaman yang muncul pada tab browser -->
+  <title>Katalog Sepatu | StepUp</title>
+
+  <!-- Menghubungkan Google Fonts agar font dapat dimuat lebih awal -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Menggunakan font DM Sans dan Outfit dari Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Menghubungkan file CSS untuk mengatur tampilan website -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+
+  <!-- ====================================== -->
+  <!-- 1. HEADER DAN NAVIGASI WEBSITE         -->
+  <!-- ====================================== -->
+
+  <!-- Header merupakan bagian atas website -->
+  <header class="site-header">
+    <div class="container nav-wrap">
+
+      <!-- Logo StepUp yang mengarah ke halaman beranda -->
+      <a class="brand" href="index.html">
+        <span class="brand-mark">F</span> step by.<span>step</span>
+      </a>
+
+      <!-- Tombol untuk membuka menu navigasi pada perangkat mobile -->
+      <button class="menu-toggle" aria-label="Buka navigasi" aria-expanded="false">☰</button>
+
+      <!-- Navigasi utama untuk berpindah halaman -->
+      <nav class="main-nav" aria-label="Navigasi utama">
+
+        <!-- Link menuju halaman beranda -->
+        <a href="index.html">Beranda
+          <i class="fa-solid fa-house"></i>
+        </a>
+
+        <!-- Link katalog yang sedang aktif -->
+        <a class="active" href="produk.html">Katalog
+          <i class="fa-solid fa-list"></i>
+        </a>
+
+        <!-- Link menuju halaman keranjang -->
+        <!-- data-cart-count digunakan JavaScript untuk menampilkan jumlah barang -->
+        <a href="keranjang.html">
+          <!-- icon keranjang awesome -->
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span>Keranjang</span>
+          <!-- jumlah barang di keranjang -->
+          <span class="cart-count" data-cart-count>0</span>
+        </a>
+      </nav>
+
+      <!-- Tombol untuk melihat keranjang belanja -->
+      <a class="button button-dark nav-cta" href="keranjang.html">
+        Lihat keranjang <span>↗</span>
+      </a>
+
+    </div>
+  </header>
+
+
+  <!-- ====================================== -->
+  <!-- 2. KONTEN UTAMA HALAMAN                -->
+  <!-- ====================================== -->
+
+  <!-- Main berisi seluruh konten utama halaman katalog -->
+  <main>
+
+    <!-- ====================================== -->
+    <!-- 3. BANNER HALAMAN KATALOG              -->
+    <!-- ====================================== -->
+
+    <!-- Bagian banner yang menampilkan judul dan deskripsi katalog -->
+    <section class="page-banner">
+      <div class="container">
+
+        <!-- Teks pengantar halaman katalog -->
+        <p class="eyebrow">THE STEPUP COLLECTION</p>
+
+        <!-- Judul utama halaman katalog -->
+        <h1>Temukan pasangan<br><span>langkahmu.</span></h1>
+
+        <!-- Deskripsi singkat mengenai koleksi sepatu -->
+        <p>Pilihan sepatu untuk gaya dan aktivitas yang berbeda.</p>
+
+      </div>
+    </section>
+
+
+    <!-- ====================================== -->
+    <!-- 4. BAGIAN KATALOG PRODUK               -->
+    <!-- ====================================== -->
+
+    <!-- Section untuk menampilkan seluruh koleksi sepatu -->
+    <section class="section container catalog-section">
+
+      <!-- ====================================== -->
+      <!-- 5. TOOLBAR PENCARIAN DAN FILTER        -->
+      <!-- ====================================== -->
+
+      <!-- Bagian yang berisi judul katalog dan kontrol pencarian -->
+      <div class="catalog-toolbar">
+
+        <!-- Informasi judul dan jumlah hasil produk -->
+        <div>
+          <p class="eyebrow">KATALOG PRODUK</p>
+
+          <!-- Judul daftar seluruh koleksi sepatu -->
+          <h2>Semua koleksi</h2>
+
+          <!--
+            Menampilkan jumlah produk yang ditemukan.
+            ID product-result-count digunakan oleh produk.js
+            untuk memperbarui informasi jumlah hasil pencarian.
+          -->
+          <p class="muted" id="product-result-count">
+            Menampilkan produk
+          </p>
+        </div>
+
+
+        <!-- ====================================== -->
+        <!-- 6. KONTROL PENCARIAN, FILTER, DAN SORTING -->
+        <!-- ====================================== -->
+
+        <!-- Kumpulan fitur untuk mencari dan mengurutkan produk -->
+        <div class="catalog-controls">
+
+          <!-- Kolom pencarian produk berdasarkan nama atau merek -->
+          <label class="search-box">
+
+            <!-- Ikon pencarian -->
+            <span>⌕</span>
+
+            <!--
+              Input pencarian dengan tipe search.
+              ID search-input digunakan JavaScript untuk membaca kata kunci.
+            -->
+            <input
+              type="search"
+              id="search-input"
+              placeholder="Cari nama atau merek..."
+              aria-label="Cari produk"
+            >
+
+          </label>
+
+
+          <!-- Pilihan untuk menyaring produk berdasarkan kategori -->
+          <label class="select-wrap">
+
+            <!-- Teks khusus untuk membantu pengguna pembaca layar -->
+            <span class="sr-only">Filter kategori</span>
+
+            <!--
+              Select digunakan untuk memilih kategori produk.
+              ID category-filter digunakan JavaScript untuk mengambil
+              kategori yang dipilih pengguna.
+            -->
+            <select id="category-filter">
+
+              <!-- Menampilkan semua kategori produk -->
+              <option value="Semua">Semua kategori</option>
+
+              <!-- Filter produk kategori Sneakers -->
+              <option value="Sneakers">Sneakers</option>
+
+              <!-- Filter produk kategori Running -->
+              <option value="Running">Running</option>
+
+              <!-- Filter produk kategori Casual -->
+              <option value="Casual">Casual</option>
+
+            </select>
+          </label>
+
+
+          <!-- Pilihan untuk mengurutkan produk -->
+          <label class="select-wrap">
+
+            <!-- Teks khusus untuk membantu pengguna pembaca layar -->
+            <span class="sr-only">Urutkan produk</span>
+
+            <!--
+              Select digunakan untuk menentukan urutan produk.
+              ID sort-filter digunakan JavaScript untuk membaca pilihan sorting.
+            -->
+            <select id="sort-filter">
+
+              <!-- Urutan produk berdasarkan rekomendasi atau urutan awal -->
+              <option value="default">Urutkan: Rekomendasi</option>
+
+              <!-- Mengurutkan produk dari harga paling murah -->
+              <option value="low">Harga terendah</option>
+
+              <!-- Mengurutkan produk dari harga paling mahal -->
+              <option value="high">Harga tertinggi</option>
+
+              <!-- Mengurutkan nama produk berdasarkan abjad A-Z -->
+              <option value="name">Nama A-Z</option>
+
+            </select>
+          </label>
+
+        </div>
+      </div>
+
+
+      <!-- ====================================== -->
+      <!-- 7. DAFTAR PRODUK                       -->
+      <!-- ====================================== -->
+
+      <!--
+        Tempat menampilkan seluruh kartu produk secara dinamis.
+        ID catalog-products digunakan oleh produk.js untuk memasukkan
+        hasil katalog berdasarkan data dari data.js.
+      -->
+      <div class="product-grid" id="catalog-products"></div>
+
+
+      <!-- ====================================== -->
+      <!-- 8. TAMPILAN JIKA PRODUK TIDAK DITEMUKAN -->
+      <!-- ====================================== -->
+
+      <!--
+        Bagian ini ditampilkan ketika hasil pencarian atau filter
+        tidak menemukan produk yang sesuai.
+        Class hidden digunakan untuk menyembunyikannya secara default.
+      -->
+      <div class="empty-state hidden" id="no-products">
+
+        <!-- Ikon pencarian -->
+        <span>⌕</span>
+
+        <!-- Pesan ketika produk tidak ditemukan -->
+        <h3>Produk tidak ditemukan</h3>
+
+        <!-- Saran kepada pengguna untuk mengubah pencarian -->
+        <p>Coba kata kunci atau kategori yang berbeda.</p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- ====================================== -->
+  <!-- 9. FOOTER WEBSITE                      -->
+  <!-- ====================================== -->
+
+  <!-- Footer merupakan bagian paling bawah halaman -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+
+      <!-- Logo StepUp pada bagian footer -->
+      <a class="brand brand-light" href="index.html">
+        <span class="brand-mark">F</span> step by.<span>step</span>
+      </a>
+
+      <!-- Slogan singkat website -->
+      <p>Temani setiap langkah dengan pilihan terbaik.</p>
+
+      <!-- Informasi hak cipta dan keterangan proyek -->
+      <small>© 2026 Step by.step Digital Shoe Store. Project pembelajaran.</small>
+
+    </div>
+  </footer>
+
+
+  <!-- ====================================== -->
+  <!-- 10. NOTIFIKASI WEBSITE                  -->
+  <!-- ====================================== -->
+
+  <!-- Elemen untuk menampilkan pesan notifikasi dari JavaScript -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+
+  <!-- ====================================== -->
+  <!-- 11. MENGHUBUNGKAN FILE JAVASCRIPT       -->
+  <!-- ====================================== -->
+
+  <!-- Memanggil library jQuery dari CDN -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <!-- Memuat data produk dari file data.js -->
+  <script src="data.js"></script>
+
+  <!-- Memuat fungsi umum website dari file app.js -->
+  <script src="app.js"></script>
+
+  <!-- Memuat fungsi khusus halaman katalog dari file produk.js -->
+  <script src="produk.js"></script>
+
+</body>
+</html>

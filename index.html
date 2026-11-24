@@ -1,0 +1,337 @@
+
+<!DOCTYPE html>
+<!-- Menentukan bahwa dokumen menggunakan HTML5 -->
+<html lang="id">
+
+<head>
+  <!-- Mengatur karakter agar mendukung huruf dan simbol -->
+  <meta charset="UTF-8">
+
+  <!-- Membuat tampilan website menyesuaikan ukuran layar perangkat -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Memberikan deskripsi website untuk mesin pencari -->
+  <meta name="description" content="StepUp - Toko sepatu online untuk setiap langkah.">
+
+  <!-- Menentukan judul yang muncul pada tab browser -->
+  <title>StepUp | Digital Shoe Store</title>
+
+  <!-- Menghubungkan Google Fonts agar font dapat dimuat lebih awal -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Menggunakan font DM Sans dan Outfit dari Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Menghubungkan file CSS untuk mengatur tampilan website -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+
+  <!-- ====================================== -->
+  <!-- 1. HEADER DAN NAVIGASI WEBSITE         -->
+  <!-- ====================================== -->
+
+  <!-- Header merupakan bagian atas website -->
+  <header class="site-header">
+    <div class="container nav-wrap">
+
+      <!-- Logo website yang mengarah ke halaman utama -->
+      <a class="brand" href="index.html">
+        <span class="brand-mark">F</span> step by.<span>step</span>
+      </a>
+
+      <!-- Tombol untuk membuka navigasi pada perangkat mobile -->
+      <button class="menu-toggle" aria-label="Buka navigasi" aria-expanded="false">☰</button>
+
+      <!-- Menu navigasi utama website -->
+      <nav class="main-nav" aria-label="Navigasi utama">
+
+        <!-- Link menuju halaman beranda -->
+        <a class="active" href="index.html">Beranda
+          <i class="fa-solid fa-house"></i>
+        </a>
+
+        <!-- Link menuju halaman katalog produk -->
+        <a href="produk.html">Katalog
+          <i class="fa-solid fa-list"></i>
+        </a>
+
+        <!-- Link menuju halaman keranjang dan menampilkan jumlah barang -->
+        <a href="keranjang.html" class="cart-link">
+          <!-- icon keranjang awesome -->
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span>Keranjang</span>
+          <!-- jumlah barang di keranjang -->
+          <span class="cart-count" data-cart-count>0</span>
+        </a>
+      </nav>
+
+      <!-- Tombol ajakan untuk langsung menuju halaman katalog -->
+      <a class="button button-dark nav-cta" href="produk.html">
+        Belanja sekarang <span>↗</span>
+      </a>
+
+    </div>
+  </header>
+
+
+  <!-- ====================================== -->
+  <!-- 2. KONTEN UTAMA WEBSITE                 -->
+  <!-- ====================================== -->
+
+  <!-- Main berisi konten utama halaman beranda -->
+  <main>
+
+    <!-- ====================================== -->
+    <!-- 3. HERO SECTION                        -->
+    <!-- ====================================== -->
+
+    <!-- Bagian utama yang pertama kali dilihat pengunjung -->
+    <section class="hero-section">
+      <div class="container hero-grid">
+
+        <!-- Bagian teks dan informasi utama -->
+        <div class="hero-copy">
+
+          <!-- Teks kecil sebagai slogan website -->
+          <p class="eyebrow">
+            <span class="eyebrow-line"></span> STEP INTO YOUR STYLE
+          </p>
+
+          <!-- Judul utama halaman beranda -->
+          <h1>Temukan langkah<br>terbaik <span>versimu.</span></h1>
+
+          <!-- Deskripsi singkat mengenai toko StepUp -->
+          <p class="hero-description">
+            Sepatu pilihan untuk menemani setiap aktivitas. Temukan gaya, kenyamanan, dan kualitas dalam satu langkah.
+          </p>
+
+          <!-- Tombol navigasi pada bagian hero -->
+          <div class="hero-actions">
+
+            <!-- Tombol untuk membuka katalog produk -->
+            <a class="button button-dark" href="produk.html">
+              Jelajahi koleksi <span>↗</span>
+            </a>
+
+            <!-- Link untuk menuju bagian produk unggulan -->
+            <a class="text-link" href="#unggulan">
+              Lihat produk unggulan <span>↓</span>
+            </a>
+
+          </div>
+
+          <!-- Informasi tambahan mengenai produk StepUp -->
+          <div class="hero-proof">
+
+            <!-- Ikon dekoratif untuk memperkuat tampilan -->
+            <div class="avatar-stack">
+              <span>👟</span>
+              <span>✨</span>
+              <span>🏃</span>
+            </div>
+
+            <!-- Teks informasi produk -->
+            <div>
+              <strong>Produk pilihan</strong>
+              <small>Gaya untuk setiap langkah</small>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Bagian visual atau gambar utama -->
+        <div class="hero-visual">
+
+          <!-- Lingkaran dekoratif pada bagian gambar -->
+          <div class="hero-circle"></div>
+
+          <!-- Label koleksi terbaru -->
+          <div class="hero-tag tag-top">
+            NEW COLLECTION <b>✦</b>
+          </div>
+
+          <!-- Menampilkan gambar sepatu utama -->
+          <img
+            src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1000&q=85"
+            alt="Sepatu sneakers merah koleksi StepUp"
+            class="hero-shoe"
+          >
+
+          <!-- Informasi tambahan pada gambar -->
+          <div class="hero-note">
+            <span>01 / 04</span>
+            <strong>Move with<br>confidence.</strong>
+          </div>
+
+          <!-- Stiker dekoratif pada bagian gambar -->
+          <div class="floating-sticker">
+            FIND<br>YOUR<br>PACE
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ====================================== -->
+    <!-- 4. BENEFIT STRIP                       -->
+    <!-- ====================================== -->
+
+    <!-- Bagian yang menampilkan keunggulan toko -->
+    <section class="benefit-strip">
+      <div class="container benefit-grid">
+
+        <!-- Keunggulan pertama -->
+        <div>
+          <span>✦</span>
+          <p>
+            <strong>Koleksi pilihan</strong>
+            <small>Model pilihan setiap saat</small>
+          </p>
+        </div>
+
+        <!-- Keunggulan kedua -->
+        <div>
+          <span>↗</span>
+          <p>
+            <strong>Belanja praktis</strong>
+            <small>Pemesanan mudah dan cepat</small>
+          </p>
+        </div>
+
+        <!-- Keunggulan ketiga -->
+        <div>
+          <span>♡</span>
+          <p>
+            <strong>Nyaman digunakan</strong>
+            <small>Temukan sepatu favoritmu</small>
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ====================================== -->
+    <!-- 5. PRODUK UNGGULAN                     -->
+    <!-- ====================================== -->
+
+    <!-- Bagian untuk menampilkan produk unggulan -->
+    <section class="section container" id="unggulan">
+
+      <!-- Judul dan link menuju seluruh katalog -->
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">PILIHAN UNTUKMU</p>
+          <h2>Favorit minggu ini<span>.</span></h2>
+        </div>
+
+        <!-- Link untuk melihat seluruh produk -->
+        <a class="text-link" href="produk.html">
+          Lihat semua produk <span>↗</span>
+        </a>
+      </div>
+
+      <!--
+        Tempat menampilkan kartu produk secara dinamis.
+        ID featured-products digunakan oleh home.js untuk memasukkan
+        empat produk unggulan dari file data.js.
+      -->
+      <div class="product-grid" id="featured-products"></div>
+
+    </section>
+
+
+    <!-- ====================================== -->
+    <!-- 6. BAGIAN PROMOSI                      -->
+    <!-- ====================================== -->
+
+    <!-- Bagian promosi untuk mengajak pengunjung melihat katalog -->
+    <section class="promo-section container">
+      <div class="promo-card">
+
+        <!-- Teks promosi -->
+        <div>
+          <p class="eyebrow">YOUR NEXT EVERYDAY FAVORITE</p>
+
+          <!-- Judul promosi -->
+          <h2>Gaya baru,<br>langkah baru.</h2>
+
+          <!-- Deskripsi promosi -->
+          <p>Temukan sepatu yang cocok untuk cerita harianmu.</p>
+
+          <!-- Tombol menuju katalog produk -->
+          <a href="produk.html" class="button button-light">
+            Temukan sekarang <span>↗</span>
+          </a>
+        </div>
+
+        <!-- Gambar pendukung bagian promosi -->
+        <div class="promo-art">
+          <span class="promo-orbit"></span>
+
+          <img
+            src="https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?auto=format&fit=crop&w=800&q=85"
+            alt="Sepatu sneakers putih"
+          >
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ====================================== -->
+  <!-- 7. FOOTER WEBSITE                      -->
+  <!-- ====================================== -->
+
+  <!-- Footer merupakan bagian paling bawah website -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+
+      <!-- Logo pada bagian footer -->
+      <a class="brand brand-light" href="index.html">
+        <span class="brand-mark">F</span> step by.<span>step</span>
+      </a>
+
+      <!-- Slogan singkat website -->
+      <p>Temani setiap langkah dengan pilihan terbaik.</p>
+
+      <!-- Informasi hak cipta dan keterangan proyek -->
+      <small>© 2026 Step by.step Digital Shoe Store. Project pembelajaran.</small>
+
+    </div>
+  </footer>
+
+
+  <!-- ====================================== -->
+  <!-- 8. NOTIFIKASI WEBSITE                   -->
+  <!-- ====================================== -->
+
+  <!-- Elemen untuk menampilkan pesan notifikasi dari JavaScript -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+
+  <!-- ====================================== -->
+  <!-- 9. MENGHUBUNGKAN FILE JAVASCRIPT        -->
+  <!-- ====================================== -->
+
+  <!-- Memanggil library jQuery dari CDN -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <!-- Memuat data produk dari file data.js -->
+  <script src="data.js"></script>
+
+  <!-- Memuat fungsi umum website dari file app.js -->
+  <script src="app.js"></script>
+
+  <!-- Memuat JavaScript khusus halaman beranda -->
+  <script src="home.js"></script>
+
+</body>
+</html>
